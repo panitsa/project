@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ข่าวสารและกิจกรรม</title>
+    <style>
+      body {
+          text-align: center;
+          background-color: #FFFFFF;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          padding: 30px;
+      }
+
+      div {
+          max-width: 600px;
+          margin: 0 auto;
+          margin-bottom: 20px;
+      }
+
+      img {
+        max-width: 100%;
+        margin-bottom: 10px;
+        height: 200px;
+    }
+    p {
+      font-size: 20px;
+    }
+  </style>
+
+</head>
+<body>
+  <h1>ข่าวสารกิจกรรม</h1>
+  {% for activity_news in activity_news %}
+    <div>
+        <img src="{{ activity_news.image.url }}" alt="{{ activity_news.text }}">
+        {% if activity_news.image1 %}
+            <img src="{{ activity_news.image1.url }}" alt="{{ activity_news.text }}">
+        {% endif %}
+        <p>{{ activity_news.text }}</p>
+        <p>วันที่: {{ activity_news.date|date:"j/n/Y" }} | เวลา: {{ activity_news.time|time:"G:i" }}</p>
+      </div>
+{% endfor %}
+</body>
+</html>

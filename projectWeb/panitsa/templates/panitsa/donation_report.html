@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Donation Receipt</title>
+</head>
+<body>
+    <h2>แบบฟอร์มการรับเงินบริจาค</h2>
+
+    <p>วันที่: {{ date }}</p>
+    <p>เรื่อง: {{ subject }}</p>
+
+    <p>ชื่อ-สกุล: {{ full_name }}</p>
+    <p>เลขประชาชน: {{ id_card }}</p>
+    <p>ที่อยู่: {{ address }}</p>
+    <p>เบอร์โทร: {{ phone_number }}</p>
+
+    <p>{{ payment_method }}</p>
+
+    <p>จำนวน: {{ cash_amount }}</p>
+    <p>{{ cheque_bank }}</p>
+    <p>เลขที่: {{ cheque_number }} <p>
+    <p>ลงวันที่: {{ cheque_number }}</p>
+    <p>จำนวนเงิน: {{ cheque_amount }}</p>
+
+    <p>{{ donor }}</p>
+    <p>{{ recipient }}</p>
+
+    <p>{{ reporter }}</p>
+</body>
+</html>
